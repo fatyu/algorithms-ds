@@ -8,47 +8,47 @@ import java.util.Stack;
  */
 public class GetMinStackCostSpace {
 
-	private Stack<Integer> data;
-	private Stack<Integer> min;
+    private Stack<Integer> data;
+    private Stack<Integer> min;
 
-	public GetMinStackCostSpace() {
-		data = new Stack<Integer>();
-		min = new Stack<Integer>();
-	}
+    public GetMinStackCostSpace() {
+        data = new Stack<Integer>();
+        min = new Stack<Integer>();
+    }
 
-	public void push(int newNum) {
-		if (min.isEmpty()) {
-			min.push(newNum);
-		} else {
-			if (newNum <= this.peekMin()) {
-				min.push(newNum);
-			}
-		}
-		data.push(newNum);
-	}
+    public void push(int newNum) {
+        if (min.isEmpty()) {
+            min.push(newNum);
+        } else {
+            if (newNum <= this.peekMin()) {
+                min.push(newNum);
+            }
+        }
+        data.push(newNum);
+    }
 
-	public int pop() {
-		if (data.isEmpty()) {
-			throw new RuntimeException("there is no data in stack");
-		}
-		if (!min.isEmpty()) {
-			min.pop();
-		}
-		return data.pop();
-	}
+    public int pop() {
+        if (data.isEmpty()) {
+            throw new RuntimeException("there is no data in stack");
+        }
+        if (!min.isEmpty()) {
+            min.pop();
+        }
+        return data.pop();
+    }
 
-	public int popMin() {
-		if (min.isEmpty()) {
-			throw new RuntimeException("there is no min data in stack");
-		}
-		return min.pop();
-	}
+    public int popMin() {
+        if (min.isEmpty()) {
+            throw new RuntimeException("there is no min data in stack");
+        }
+        return min.pop();
+    }
 
-	public int peekMin() {
-		if (min.isEmpty()) {
-			throw new RuntimeException("there is no min data in stack");
-		}
-		return min.peek();
-	}
+    public int peekMin() {
+        if (min.isEmpty()) {
+            throw new RuntimeException("there is no min data in stack");
+        }
+        return min.peek();
+    }
 
 }
