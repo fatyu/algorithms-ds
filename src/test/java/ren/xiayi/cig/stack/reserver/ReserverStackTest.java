@@ -2,6 +2,7 @@ package ren.xiayi.cig.stack.reserver;
 
 import java.util.Stack;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class ReserverStackTest {
@@ -13,10 +14,11 @@ public class ReserverStackTest {
         data.push(2);
         data.push(3);
 
-        ReserverStack<Integer> rs = new ReserverStack<Integer>();
-        rs.reserve(data);
-
-        System.out.println(data);
+        ReserverStack<Integer> rs = new ReserverStack<Integer>(data);
+        rs.reserve();
+        String string = rs.toString();
+        System.out.println(string);
+        Assert.assertTrue("[3, 2, 1]".equals(string));
     }
 
 }
